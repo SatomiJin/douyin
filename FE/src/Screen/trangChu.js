@@ -1,7 +1,6 @@
 import NavBarCpn from "../Component/navBarCpn";
 // import Member from "../Component/member";
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function TrangChuScreen(props) {
   const config = {
     ...props.config,

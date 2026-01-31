@@ -1,6 +1,5 @@
 import React from "react";
 import Data from "./Data/data";
-import { useCookies } from "react-cookie";
 function App() {
   var myArray = [];
 

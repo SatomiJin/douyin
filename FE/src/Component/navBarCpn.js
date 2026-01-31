@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as TrangChu } from "../Public/Assets/trangChu.svg";
 import { ReactComponent as TongQuan } from "../Public/Assets/tongQuan.svg";
 import { ReactComponent as SoTay } from "../Public/Assets/soTay.svg";
@@ -104,8 +104,8 @@ const NavBarCpn = (props) => {
                 <li
                   className="dropdown-item"
                   onClick={() =>
-                    (window.location.href =
-                      "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=duoyinzi99@gmail.com")
+                  (window.location.href =
+                    "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=duoyinzi99@gmail.com")
                   }
                 >
                   <i className="fa-regular fa-comments"></i>

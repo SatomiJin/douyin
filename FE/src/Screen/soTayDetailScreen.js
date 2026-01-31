@@ -1,8 +1,7 @@
 import NavBarCpn from "../Component/navBarCpn";
-import React, { useState, useEffect, useRef } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import AudioButton from "../Component/audioBtn";
-import { useCookies } from "react-cookie";
 import axios from "axios";
 
 function SoTayDetailScreen(props) {

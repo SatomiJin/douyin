@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Public/style.css";
-import { HashRouter, Router, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 
 import Footer from "../Component/footerCpn";
@@ -14,7 +14,6 @@ import SoTayDetailScreen from "../Screen/soTayDetailScreen";
 function Data() {
   const [soTayData, setSoTayData] = useState([]);
   const [baiTapData, setBaiTapData] = useState([]);
-  const [wordDrawDrive, setWordDrawDrive] = useState([]);
   const config = {
     pageIndex: 2,
     wordIndex: 1,
@@ -40,7 +39,7 @@ function Data() {
       try {
         const response = await axios.get(
           `https://sheets.googleapis.com/v4/spreadsheets/${config.googleSheetId}/values/soTay?key=` +
-            config.API_Key,
+          config.API_Key,
         );
         setSoTayData(
           response.data.values.splice(config.soTayDataStartRow),
@@ -53,7 +52,7 @@ function Data() {
       try {
         const response = await axios.get(
           `https://sheets.googleapis.com/v4/spreadsheets/${config.googleSheetId}/values/baiTap?key=` +
-            config.API_Key,
+          config.API_Key,
         );
 
         setBaiTapData(response.data.values.splice(config.baiTapDataStartRow));

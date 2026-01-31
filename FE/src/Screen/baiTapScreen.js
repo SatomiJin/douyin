@@ -1,12 +1,6 @@
 import NavBarCpn from "../Component/navBarCpn";
-import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-  Link,
-} from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./ScreenCss/baiTapScreen.css";
 
 function BaiTapScreen(props) {
@@ -209,9 +203,8 @@ function BaiTapScreen(props) {
                   onClick={() => selectType(1)}
                 >
                   <div
-                    className={`text-bold ${
-                      Type == 1 ? "bg-darkBlue" : "bg-lightBlue"
-                    }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
+                    className={`text-bold ${Type == 1 ? "bg-darkBlue" : "bg-lightBlue"
+                      }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
                   >
                     1. Điền phiên âm
                   </div>
@@ -221,9 +214,8 @@ function BaiTapScreen(props) {
                   onClick={() => selectType(2)}
                 >
                   <div
-                    className={`text-bold ${
-                      Type == 2 ? "bg-darkBlue" : "bg-lightBlue"
-                    }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
+                    className={`text-bold ${Type == 2 ? "bg-darkBlue" : "bg-lightBlue"
+                      }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
                   >
                     2. Chọn nghĩa tương ứng
                   </div>
@@ -247,9 +239,8 @@ function BaiTapScreen(props) {
                   onClick={() => selectType(3)}
                 >
                   <div
-                    className={`text-bold ${
-                      Type == 3 ? "bg-darkBlue" : "bg-lightBlue"
-                    }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
+                    className={`text-bold ${Type == 3 ? "bg-darkBlue" : "bg-lightBlue"
+                      }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
                   >
                     3. Chọn câu chữ Hán tương ứng
                   </div>
@@ -259,9 +250,8 @@ function BaiTapScreen(props) {
                   onClick={() => selectType(4)}
                 >
                   <div
-                    className={`text-bold ${
-                      Type == 4 ? "bg-darkBlue" : "bg-lightBlue"
-                    }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
+                    className={`text-bold ${Type == 4 ? "bg-darkBlue" : "bg-lightBlue"
+                      }  hover-darkBlue py-4 fw-bold ps-5 hover-mouse h-100 rounded-pill`}
                   >
                     4. Phán đoán đúng sai
                   </div>
@@ -300,15 +290,15 @@ function BaiTapScreen(props) {
                                         key={index}
                                         style={
                                           char === question[1] &&
-                                          index > 0 &&
-                                          (question[Type * 2][index - 1] ===
-                                            "(" ||
-                                            question[Type * 2][index - 1] ===
+                                            index > 0 &&
+                                            (question[Type * 2][index - 1] ===
+                                              "(" ||
+                                              question[Type * 2][index - 1] ===
                                               "（")
                                             ? {
-                                                color: "red",
-                                                fontWeight: "bold",
-                                              }
+                                              color: "red",
+                                              fontWeight: "bold",
+                                            }
                                             : { color: "inherit" }
                                         }
                                       >
@@ -323,7 +313,7 @@ function BaiTapScreen(props) {
                           {Check ? (
                             <div>
                               {responses[question[0]] &&
-                              responses[question[0]] ===
+                                responses[question[0]] ===
                                 question[Type * 2 + 1] ? (
                                 <input
                                   style={{ backgroundColor: "#90EE90" }}
@@ -435,15 +425,15 @@ function BaiTapScreen(props) {
                         </div>
                         {getDataABCD(question[Type * 2])[1].map((option, i) =>
                           Check &&
-                          responses[question[0]] &&
-                          responses[question[0]] ===
+                            responses[question[0]] &&
+                            responses[question[0]] ===
                             String.fromCharCode(65 + i) ? (
                             <div
                               key={index}
                               style={{ display: "flex", alignItems: "center" }}
                             >
                               {responses[question[0]] !==
-                              question[Type * 2 + 1] ? (
+                                question[Type * 2 + 1] ? (
                                 <div
                                   style={{ color: "red", fontWeight: "bold" }}
                                 >
@@ -566,15 +556,15 @@ function BaiTapScreen(props) {
                         </div>
                         {getDataABCD(question[Type * 2])[1].map((option, i) =>
                           Check &&
-                          responses[question[0]] &&
-                          responses[question[0]] ===
+                            responses[question[0]] &&
+                            responses[question[0]] ===
                             String.fromCharCode(65 + i) ? (
                             <div
                               key={index}
                               style={{ display: "flex", alignItems: "center" }}
                             >
                               {responses[question[0]] !==
-                              question[Type * 2 + 1] ? (
+                                question[Type * 2 + 1] ? (
                                 <div
                                   style={{ color: "red", fontWeight: "bold" }}
                                 >
@@ -709,7 +699,7 @@ function BaiTapScreen(props) {
                         {Check ? (
                           <div>
                             {responses[question[0]] &&
-                            responses[question[0]] ===
+                              responses[question[0]] ===
                               question[Type * 2 + 1] ? (
                               <input
                                 style={{ backgroundColor: "#90EE90" }}

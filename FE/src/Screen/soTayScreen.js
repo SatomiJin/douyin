@@ -1,13 +1,7 @@
 import NavBarCpn from "../Component/navBarCpn";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./ScreenCss/soTayScreen.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-  Link,
-} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router";
 
 function SoTayScreen(props) {
@@ -106,9 +100,8 @@ function SoTayScreen(props) {
                   <div
                     onClick={() => handleClick(config.idIndex)}
                     // to={`${config.location}/${item[config.idIndex]}`}
-                    className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${
-                      isInActive ? "l-disable" : ""
-                    }`}
+                    className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${isInActive ? "l-disable" : ""
+                      }`}
                     style={{ maxWidth: "180px", textDecoration: "none" }}
                     key={index - 1}
                   >
@@ -130,9 +123,8 @@ function SoTayScreen(props) {
                   <div
                     onClick={() => handleClick(config.idIndex)}
                     to={`${config.location}/${item[config.idIndex]}`}
-                    className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${
-                      isInActive ? "l-disable" : ""
-                    }`}
+                    className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${isInActive ? "l-disable" : ""
+                      }`}
                     style={{ maxWidth: "180px", textDecoration: "none" }}
                     key={index - 1}
                   >

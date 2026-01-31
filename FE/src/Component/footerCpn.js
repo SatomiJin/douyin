@@ -1,11 +1,4 @@
 import React from "react";
-// import { useState, useEffect } from "react";
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ReactComponent as Copyright } from "../Public/Assets/copyright.svg";
-import { ReactComponent as Facebook } from "../Public/Assets/facebook.svg";
-import { ReactComponent as Mail } from "../Public/Assets/mail.svg";
-// import { ReactComponent as Code } from "../Public/Assets/code.svg";
-// import { ReactComponent as Location } from "../Public/Assets/location.svg";
 import "./ComponentCss/footerCpn.css";
 
 const footerCpn = (props) => {
@@ -17,25 +10,6 @@ const footerCpn = (props) => {
   const banQuyenList = [
     {
       name: 'Bản quyền thuộc về nhóm sinh viên nghiên cứu đề tài: "Thiết kế và xây dựng hệ thống ngữ liệu trực tuyến chữ Hán đa âm dành cho sinh viên ngành Ngôn ngữ Trung Quốc.".',
-      icon: <Copyright />,
-    },
-    // { name: "Khoa Tiếng Trung Trường Đại học Sư phạm Thành phố Hồ Chí Minh.",
-    //   icon: <Location/>
-    // },
-
-    // {
-    //   name: "Website được xây dựng và phát triển bởi Đào Duy Long, Nguyễn Đức Đạt, Bùi Lê Văn, Nguyễn Thị Tố An, Nguyễn Thị Thanh Trúc.",
-    //   icon: <Code />,
-    // },
-  ];
-  const lienHeList = [
-    {
-      name: "Mail: duoyinzi99@gmail.com",
-      link: "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=duoyinzi99@gmail.com",
-    },
-    {
-      name: "Fanpage",
-      link: "https://www.facebook.com/profile.php?id=61557907629340&mibextid=ZbWKwL",
     },
   ];
   const handleClick = (link) => {
