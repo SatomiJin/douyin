@@ -1,7 +1,6 @@
 import NavBarCpn from "../Component/navBarCpn";
 import "./ScreenCss/video.css";
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function VideoScreen(props) {
   const config = {
     ...props.config,
@@ -29,13 +28,22 @@ function VideoScreen(props) {
       <NavBarCpn config={config} />
       {/* <div style={{ height: config.headerHeight }}></div> */}
       <div className="text-center mt-5 pb-5">
-        <div className="c-lightRed text-center fw-bold" style={{ fontSize: config.titleSize }}>
+        <div
+          className="c-lightRed text-center fw-bold"
+          style={{ fontSize: config.titleSize }}
+        >
           DUOYIN
         </div>
-        <div className="c-darkBlue fw-bold text-center " style={{ fontSize: config.subTitleSize }}>
+        <div
+          className="c-darkBlue fw-bold text-center "
+          style={{ fontSize: config.subTitleSize }}
+        >
           VIDEO PHÂN BIỆT CÁC ÂM ĐỌC CỦA CHỮ
         </div>
-        <div className="c-darkBlue text-center " style={{ fontSize: config.subSubTitleSize }}>
+        <div
+          className="c-darkBlue text-center "
+          style={{ fontSize: config.subSubTitleSize }}
+        >
           Click vào các nội dung tương ứng bên dưới để xem video
         </div>
         <div className="row px-1 mt-5 justify-content-center mx-0">
