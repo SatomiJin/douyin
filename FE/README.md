@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# DUOYIN - Hệ thống ngữ liệu trực tuyến chữ Hán đa âm
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-7952B3?style=flat-square&logo=bootstrap)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-## Available Scripts
+## 📖 Giới thiệu
 
-In the project directory, you can run:
+**DUOYIN** (多音字) là hệ thống ngữ liệu trực tuyến tích hợp sổ tay từ vựng và bài tập vận dụng chữ Hán đa âm. Hệ thống được phát triển bởi nhóm sinh viên Khoa Tiếng Trung, Trường Đại học Sư phạm Thành phố Hồ Chí Minh.
 
-### `npm start`
+Hệ thống cung cấp các tính năng hỗ trợ người học dễ dàng tra cứu và ôn luyện kiến thức về chữ Hán đa âm.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Tính năng chính
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Tính năng | Mô tả |
+|-----------|-------|
+| 📚 **Sổ tay (笔记本)** | Tra cứu danh sách chữ Hán đa âm với đầy đủ phiên âm, từ loại, giải thích và ví dụ |
+| ✏️ **Bài tập (练习)** | 4 dạng bài tập: Điền phiên âm, Chọn nghĩa, Chọn câu chữ Hán, Phán đoán đúng sai |
+| 🎬 **Video (视频)** | Video ngắn giúp phân biệt các âm đọc của chữ Hán đa âm |
+| 💬 **Diễn đàn (论坛)** | Nơi trao đổi và chia sẻ thông tin về chữ Hán đa âm |
+| 🆘 **Trợ giúp (帮助)** | Hỗ trợ giải đáp các vấn đề liên quan đến hệ thống |
 
-### `npm test`
+## 🛠️ Công nghệ sử dụng
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend Framework:** React 18
+- **Routing:** React Router DOM 6
+- **UI Framework:** Bootstrap 5
+- **HTTP Client:** Axios
+- **Data Source:** Google Sheets API
+- **Deployment:** GitHub Pages
 
-### `npm run build`
+## 📦 Cài đặt
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Yêu cầu hệ thống
+- Node.js >= 14.x
+- npm >= 6.x
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Các bước cài đặt
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/SatomiJin/douyin.git
+   cd douyin
+   ```
 
-### `npm run eject`
+2. **Cài đặt dependencies**
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Chạy ứng dụng ở môi trường development**
+   ```bash
+   npm start
+   ```
+   Ứng dụng sẽ chạy tại [http://localhost:3000](http://localhost:3000)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Build production**
+   ```bash
+   npm run build
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Để deploy lên GitHub Pages:
 
-## Learn More
+```bash
+npm run deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Cấu trúc thư mục
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── Component/           # Các component tái sử dụng
+│   ├── audio/          # File audio phát âm
+│   ├── audioBtn.js     # Component nút phát âm
+│   ├── footerCpn.js    # Component footer
+│   ├── member.js       # Component thành viên nhóm
+│   └── navBarCpn.js    # Component navigation bar
+├── Data/
+│   └── data.js         # Quản lý routing và fetch data
+├── Public/
+│   ├── Assets/         # Hình ảnh và icon
+│   └── style.css       # CSS chung
+└── Screen/             # Các màn hình chính
+    ├── baiTapScreen.js     # Màn hình bài tập
+    ├── soTayScreen.js      # Màn hình sổ tay
+    ├── soTayDetailScreen.js # Chi tiết từ vựng
+    ├── tongQuan.js         # Màn hình tổng quan
+    ├── trangChu.js         # Trang chủ
+    └── video.js            # Màn hình video
+```
 
-### Code Splitting
+## 📜 Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Lệnh | Mô tả |
+|------|-------|
+| `npm start` | Chạy app ở chế độ development |
+| `npm run build` | Build app cho production |
+| `npm test` | Chạy test |
+| `npm run deploy` | Deploy lên GitHub Pages |
 
-### Analyzing the Bundle Size
+## 👥 Nhóm nghiên cứu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Sinh viên khóa 47 - Khoa Tiếng Trung - Trường Đại học Sư phạm Thành phố Hồ Chí Minh:
 
-### Making a Progressive Web App
+- Nguyễn Thị Tố An
+- Nguyễn Thị Thanh Trúc
+- Lư Gia Linh
+- Huỳnh Bửu Dinh
+- Tào Tuyết Linh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📧 Liên hệ
 
-### Advanced Configuration
+- **Email:** duoyinzi99@gmail.com
+- **Fanpage:** [Duoyin - Hệ thống ngữ liệu trực tuyến chữ Hán đa âm](https://www.facebook.com/profile.php?id=61557907629340)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📄 Bản quyền
 
-### Deployment
+Bản quyền thuộc về nhóm sinh viên nghiên cứu đề tài: "Thiết kế và xây dựng hệ thống ngữ liệu trực tuyến chữ Hán đa âm dành cho sinh viên ngành Ngôn ngữ Trung Quốc."
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+  Made with ❤️ by DUOYIN Team
+</p>
