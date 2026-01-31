@@ -1,0 +1,11 @@
+@media (max-width: 768px){
+    .baitap-title{
+        font-size: 50px !important;
+    }
+    .baitap-example{
+        font-size: 30px !important;
+    }
+    .baitap-content{
+        font-size: 20px !important;
+    }
+}
