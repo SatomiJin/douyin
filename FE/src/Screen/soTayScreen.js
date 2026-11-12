@@ -90,7 +90,7 @@ function SoTayScreen(props) {
             style={{ maxHeight: config.showWordHeight }}
           >
             {viewedDataList
-              .filter((data) => data[config.wordIndex].includes(searchWord))
+              .filter((data) => data[config.wordIndex + 4].includes(searchWord))
               .map((item, index) => {
                 const isInActive =
                   item[config.idIndex] == 37 || item[config.idIndex] == 66;
@@ -98,7 +98,7 @@ function SoTayScreen(props) {
 
                 return (
                   <div
-                    onClick={() => handleClick(config.idIndex)}
+                    onClick={() => handleClick(item[config.idIndex])}
                     // to={`${config.location}/${item[config.idIndex]}`}
                     className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${isInActive ? "l-disable" : ""
                       }`}
@@ -108,7 +108,7 @@ function SoTayScreen(props) {
                     <Card
                       className={`rounded bg-darkBlue text-white ${isInActive ? "d-none" : ""}`}
                     >
-                      {item[config.wordIndex]}
+                      {item[config.wordIndex + 1]}
                     </Card>
                   </div>
                 );
@@ -121,7 +121,7 @@ function SoTayScreen(props) {
                 if (isInActive) return;
                 return (
                   <div
-                    onClick={() => handleClick(config.idIndex)}
+                    onClick={() => handleClick(item[config.idIndex])}
                     to={`${config.location}/${item[config.idIndex]}`}
                     className={`rounded col-md-2 col-lg-1 col-3 hover-bold hover-bigger2 hover-mouse lh-20 valign px-1 fs-20 ${isInActive ? "l-disable" : ""
                       }`}

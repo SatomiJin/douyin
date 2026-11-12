@@ -14,15 +14,17 @@ function SoTayDetailScreen(props) {
     gifMaxSize: window.innerWidth < 1000 ? "240px" : "350px",
     // API_Key: "AIzaSyBKPlL1ShlpGyIFEgCaQDHxf_btJZgeh3g",
     wordDrawFolderDriveId: "1pKB7Ww60X5FwhR-bSR8yzVHGG01MeOgE",
-    // baseLinkDrive: "https://drive.google.com/thumbnail?id=",
+    baseLinkDrive: "https://drive.google.com/thumbnail?id=",
   };
   const urlList = config.location.split("/");
 
-  const wordId = String(Number(urlList[urlList.length - 1]) + 1);
+  // wordId = id toàn cục (1..N) theo thứ tự dòng trong sheet, trùng với tên file gif/audio
+  const wordId = urlList[urlList.length - 1];
   const wordFileName = wordId + ".gif";
   const [wordGifLink, setWordGifLink] = useState(null);
 
   useEffect(() => {
+    setWordGifLink(null); // tránh hiện gif của chữ trước khi chuyển chữ
     const fetchData = async () => {
       try {
         const url = `https://www.googleapis.com/drive/v3/files?key=${config.API_Key}&q=name='${wordFileName}' and '${config.wordDrawFolderDriveId}' in parents`;
@@ -42,7 +44,7 @@ function SoTayDetailScreen(props) {
     fetchData();
   }, [wordFileName]);
 
-  const data = props.data.find((item) => item[config.idIndex + 1] === wordId);
+  const data = props.data.find((item) => item[config.idIndex] === wordId);
 
   const tableData = data ? data.slice(config.amDoc_1_Index) : [];
   const rows = [];

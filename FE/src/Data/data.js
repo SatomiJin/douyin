@@ -22,7 +22,7 @@ function Data() {
     amDocLength: 4,
     soTayDataStartRow: 1,
     baiTapDataStartRow: 1,
-    soNetVeIndex: 2,
+    soNetVeIndex: 3,
     soAmDocIndex: 4,
     linkGifIndex: 3,
     soCauBaiTap: 20,
@@ -41,9 +41,13 @@ function Data() {
           `https://sheets.googleapis.com/v4/spreadsheets/${config.googleSheetId}/values/soTay?key=` +
           config.API_Key,
         );
+        // Cột STT (B) đánh lại 1..20 cho từng người phụ trách nên bị trùng.
+        // GIF/audio được đặt tên theo thứ tự dòng toàn cục (1..N), nên ghi đè
+        // cột A (người phụ trách - không dùng) bằng id toàn cục đó.
         setSoTayData(
-          response.data.values.splice(config.soTayDataStartRow),
-          // .sort((a, b) => a[4].localeCompare(b[4]))
+          response.data.values
+            .splice(config.soTayDataStartRow)
+            .map((row, i) => [String(i + 1), ...row.slice(1)]),
         );
       } catch (error) {
         console.error("Error fetching data:", error);
